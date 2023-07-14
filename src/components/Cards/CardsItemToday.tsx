@@ -27,13 +27,16 @@ const CardsItemToday: React.FC<CardsItemTodayProps> = ({
           {date.getDate()} {months[month]}
         </div>
         <div className={s.CardsItemDay_img}>
-          <GlobalSvgSelector id="sun" />
+          <GlobalSvgSelector id={weather.weather[0].description} />
         </div>
         <div className={s.CardsItemDay_temp_day}>
           {Math.round(weather.main?.temp_max)}
         </div>
         <div className={s.CardsItemDay_temp_night}>
           {Math.round(weather.main?.temp_min)}
+        </div>
+        <div className={s.CardsItemDay_description}>
+          {weather.weather[0].description}
         </div>
       </div>
     </div>

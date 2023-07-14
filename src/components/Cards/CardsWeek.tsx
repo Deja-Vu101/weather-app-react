@@ -52,13 +52,13 @@ const CardsWeek: React.FC<ICardsWeek> = ({ forecast }) => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1920,
+        breakpoint: 1919,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           dots: false,
-          display: 'none'
+          display: 'none',
         },
       },
       {
@@ -109,6 +109,7 @@ const CardsWeek: React.FC<ICardsWeek> = ({ forecast }) => {
                       daysOfWeek={daysOfWeek}
                       dateString={f.dt_txt}
                       months={months}
+                      forecastImg = {f.weather[0].description}
                     />
                   );
                 } else {

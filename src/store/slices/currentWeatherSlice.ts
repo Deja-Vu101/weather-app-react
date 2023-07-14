@@ -1,6 +1,6 @@
 import { IError, IRootWeather } from "./../../types/index";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AxiosResponse } from "axios";
+import { AxiosError, AxiosResponse } from "axios";
 
 export interface ICurrentWeather {
   weather: IRootWeather;
@@ -27,21 +27,24 @@ export const currentWeatherSlice = createSlice({
       state,
       action: PayloadAction<AxiosResponse<IRootWeather>>
     ) {
-      
-      state.weather = action.payload.data;
       state.isLoading = false;
+      state.weather = action.payload.data;
+      
     },
     fetchCurrentWeatherError(
       state,
-      action: PayloadAction<AxiosResponse<IError>>
+      action: PayloadAction<AxiosError<IError>>
     ) {
       state.isLoading = false;
-      state.error.cod = action.payload.status;
-      state.error.message = action.payload.statusText;
+      state.error = {
+        cod: action.payload.code,
+        message: action.payload.message
+      }
+      
     },
-    changeFilterButton(state, action){
-      state.filterBtn = action.payload
-    }
+    //changeFilterButton(state, action){
+    //  state.filterBtn = action.payload
+    //}
   },
 });
 

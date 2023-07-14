@@ -4,8 +4,8 @@ import s from "./MainSection.module.scss";
 import Cards from "./Cards/Cards";
 import { useTypedSelector } from "../hooks";
 
-const MainSection = () => {
-  const { weather, error, isLoading } = useTypedSelector(
+const MainSection: React.FC = () => {
+  const { weather, isLoading } = useTypedSelector(
     (state) => state.currentWeatherSlice
   );
 
@@ -22,7 +22,9 @@ const MainSection = () => {
             </>
           )}
         </div>
-        <Cards name={weather.name} />
+        {isLoading || Object.keys(weather).length === 0 ? null : (
+          <Cards name={weather.name} />
+        )}
       </div>
     </section>
   );

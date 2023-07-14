@@ -64,26 +64,18 @@
   @media (max-width: 1250px) {
     overflow: hidden;
     width: 510px;
-    //background-image: url("../../../src/assets/img/Cloud.svg");
-    //background-repeat: no-repeat;
-    //background-position: right;
   }
 
   @media (max-width: 900px) {
-   
     padding: 20px;
     width: 500px;
-    
   }
   @media (max-width: 580px) {
-   
     margin-bottom: 30px;
-		width: 430px;
-	}
+    width: 430px;
+  }
 }
 
-.ThisDayInfo_content {
-}
 .infoItems {
   display: flex;
   flex-direction: column;
@@ -127,8 +119,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-.infoItem_description {
 }
 
 .backgroundImage {

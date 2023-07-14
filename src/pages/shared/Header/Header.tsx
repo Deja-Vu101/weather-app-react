@@ -1,14 +1,17 @@
-import Select from "react-select";
 import { GlobalSvgSelector } from "../../../assets/img/icons/GlobalSvgSelector";
 import s from "./Header.module.scss";
 import { useEffect, useState } from "react";
 import { useTheme } from "../../../hooks/useTheme";
 import { Theme } from "../../../context/ThemeContext";
-import { useTypedDispatch, useTypedSelector } from "../../../hooks";
+import {
+  useDebounce,
+  useTypedDispatch,
+  useTypedSelector,
+} from "../../../hooks";
 import { fetchWeather } from "../../../thunks/fetchWeather";
 
 const Header = () => {
-  const {weather} = useTypedSelector(state => state.currentWeatherSlice)
+  const { weather } = useTypedSelector((state) => state.currentWeatherSlice);
   const theme = useTheme();
 
   const changeTheme = () => {
@@ -35,6 +38,7 @@ const Header = () => {
   }, [theme.theme]);
 
   const [currentValueCity, setCurrentValueCity] = useState("");
+  const debounce = useDebounce(currentValueCity, 800);
 
   const onChange = (e: string) => {
     setCurrentValueCity(e);
@@ -46,16 +50,19 @@ const Header = () => {
     if (currentValueCity.length !== 0) {
       dispatch(fetchWeather(currentValueCity));
     }
-  }, [currentValueCity]);
- 
-  
+  }, [debounce]);
+
   return (
     <header className={s.Header}>
       <div className={s.header_wrapper}>
         <div className={s.imgLogoHeader}>
-          <GlobalSvgSelector id="header-logo" />
+          <a href="/">
+            <GlobalSvgSelector id="header-logo" />
+          </a>
         </div>
-        <span className={s.logoText}>React weather</span>
+        <a href="/" className={s.logoText}>
+          React weather
+        </a>
       </div>
 
       <div className={s.header_wrapper}>
@@ -63,7 +70,11 @@ const Header = () => {
           <GlobalSvgSelector id="change-theme" />
         </div>
         <input
-        style={Object.keys(weather).length == 0 ? {display: 'none'} :  {display: 'block'}}
+          style={
+            Object.keys(weather).length == 0
+              ? { display: "none" }
+              : { display: "block" }
+          }
           className={s.inputSearchCity}
           type="text"
           placeholder="Search a new city..."

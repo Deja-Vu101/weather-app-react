@@ -9,14 +9,16 @@ interface CardsItemDayProps {
   daysOfWeek: { [key: number]: string }
   months: { [key: number]: string }
   dateString: string
+  forecastImg: string
 }
 
-const CardsItemDay: React.FC<CardsItemDayProps> = ({ obj, daysOfWeek, months, dateString }) => {
+const CardsItemDay: React.FC<CardsItemDayProps> = ({ obj, daysOfWeek, months, dateString, forecastImg }) => {
  
   const date = new Date(dateString);
   const day = date.getDay();
   const month = date.getMonth();
-  console.log(day);
+  
+  console.log(forecastImg);
   
   return (
     <div className={s.CardsItemDay}>
@@ -26,13 +28,16 @@ const CardsItemDay: React.FC<CardsItemDayProps> = ({ obj, daysOfWeek, months, da
           {date.getDate()} {months[month]}
         </div>
         <div className={s.CardsItemDay_img}>
-          <GlobalSvgSelector id="sun" />
+          <GlobalSvgSelector id={forecastImg} />
         </div>
         <div className={s.CardsItemDay_temp_day}>
           {Math.round(obj.main.temp_max)}
         </div>
         <div className={s.CardsItemDay_temp_night}>
           {Math.round(obj.main.temp_min)}
+        </div>
+        <div className={s.CardsItemDay_description}>
+          {forecastImg}
         </div>
       </div>
     </div>

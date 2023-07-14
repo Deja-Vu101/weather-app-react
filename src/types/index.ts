@@ -80,6 +80,6 @@ export interface Sys {
 }
 
 export interface IError {
-  cod: number;
+  cod: string | undefined;
   message: string;
 }

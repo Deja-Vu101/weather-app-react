@@ -4,7 +4,7 @@ import { AxiosResponse } from 'axios';
 import axios from "axios";
 import { AppDispatch } from "../store";
 import { currentWeatherSlice } from "../store/slices/currentWeatherSlice";
-import { IRootWeather } from "../types";
+import { IError, IRootWeather } from "../types";
 
 
 
@@ -20,8 +20,9 @@ export const fetchWeather = (city: string) => {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
       );
       dispatch(currentWeatherSlice.actions.fetchCurrentWeatherSuccess(res));
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      dispatch(currentWeatherSlice.actions.fetchCurrentWeatherError(error.response.data))
     }
   };
 };

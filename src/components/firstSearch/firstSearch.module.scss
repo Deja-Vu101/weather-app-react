@@ -14,8 +14,8 @@
     width: 520px;
   }
   @media (max-width: 550px) {
-	width: 320px;
- }
+    width: 320px;
+  }
 }
 
 .firstSearch_wrapper {
@@ -58,6 +58,11 @@
   cursor: pointer;
   background: #4793ff;
   background-color: rgb(134, 176, 234);
-	color: var(--text-color-default);
+  color: var(--text-color-default);
+}
 
+.FisrtSearchCity_message {
+  margin-top: 10px;
+  font-size: 21px;
+  color: red;
 }
