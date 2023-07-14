@@ -1,0 +1,155 @@
+@import "../../styles/variables.scss";
+
+.ThisDay {
+  width: 400px;
+  height: 300px;
+  margin-right: 50px;
+
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background: var(--components-background-default);
+  @media (max-width: 900px) {
+    margin: 0 auto;
+  }
+}
+.ThisDay_content {
+  padding: 20px;
+}
+
+.content_top_day {
+  color: var(--text-color-default);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 31px;
+}
+.ThisDay_content_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content_top_temperature {
+  color: $primary-color;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.thisDay_img {
+  margin-top: 26px;
+  width: 119px;
+  height: 119px;
+}
+
+.ThisDay_content_bottom {
+  color: $base-color;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ThisDayInfo {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  width: 750px;
+  border-radius: 20px;
+  background: var(--components-background-default);
+  box-shadow: $box-shadow;
+  position: relative;
+
+  @media (max-width: 1250px) {
+    overflow: hidden;
+    width: 510px;
+    //background-image: url("../../../src/assets/img/Cloud.svg");
+    //background-repeat: no-repeat;
+    //background-position: right;
+  }
+
+  @media (max-width: 900px) {
+   
+    padding: 20px;
+    width: 500px;
+    
+  }
+  @media (max-width: 580px) {
+   
+    margin-bottom: 30px;
+		width: 430px;
+	}
+}
+
+.ThisDayInfo_content {
+}
+.infoItems {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-left: 32px;
+}
+.infoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.infoItem_leftContent {
+  display: flex;
+  align-items: center;
+}
+.infoItemImg {
+}
+.infoItem_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--components-background-default);
+  box-shadow: $box-shadow;
+  margin-right: 20px;
+}
+.infoItem_title {
+  color: $base-color;
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 20px;
+}
+.infoItem_description {
+  color: var(--text-color-default);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.infoItem_description {
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @media (max-width: 1250px) {
+    top: 0;
+    left: 260px;
+    overflow: hidden;
+  }
+  @media (max-width: 900px) {
+    top: 00;
+    left: 300px;
+    overflow: hidden;
+  }
+}
+.infoItemPopup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}

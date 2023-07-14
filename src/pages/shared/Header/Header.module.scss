@@ -1,0 +1,33 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.header_wrapper {
+  width: 1200px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px 0 15px;
+}
+.logoText {
+  font-family: "Poppins";
+  color: #4793ff;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.changeTheme {
+  cursor: pointer;
+}
+
+.inputSearchCity {
+  width: 140px;
+  height: 37px;
+  border-radius: 10px;
+  padding-left: 10px;   
+
+  
+}
+

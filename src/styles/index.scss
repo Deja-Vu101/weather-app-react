@@ -1,0 +1,7 @@
+@import '~normalize.css';
+
+body{
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	background: var(#{--body-background-default});
+}

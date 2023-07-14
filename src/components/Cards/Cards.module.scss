@@ -1,0 +1,159 @@
+@import "../../styles/variables.scss";
+
+.Cards {
+  margin-top: 50px;
+  @media (max-width: 580px) {
+ 
+		width: 450px;
+    margin: 0 auto;
+	}
+  
+}
+.Cards_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.cardsButtons {
+  margin-bottom: 7px;
+}
+.FilterButtonDays {
+  display: flex;
+  justify-content: space-between;
+
+  
+}
+.ButtonDays_days {
+  display: flex;
+  gap: 15px;
+
+  @media (max-width: 900px) {
+    gap: 5px;
+  }
+}
+.ButtonDays_filterBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color-default);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 9px 21px;
+  border-radius: 5px;
+  background: var(--card-background-default);
+  box-shadow: var(--card-shadow-default);
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    padding: 3px 10px;
+    font-size: 15px;
+  }
+ 
+}
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $dark-color;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 9px 21px;
+  border-radius: 5px;
+  background: $primary-color;
+  box-shadow: var(--card-shadow-default);
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+}
+
+.CardsWeek_wrapper {
+ 
+ 
+  
+  
+}
+.CardsWeek_wrapper_conteiner{
+  display: flex;
+  
+  justify-content: space-around;
+  
+  padding: 20px;
+
+}
+.CardsWeek {
+  border-radius: 0px 0px 20px 20px;
+  background: var(--components-background-default);
+
+  box-shadow: var(--card-shadow-default);
+  
+}
+.CardsItemDay {
+  width: 149px;
+  height: 200px;
+  border-radius: 10px;
+  background: var(--card-background-default);
+ 
+  &:hover {
+    box-shadow: var(--card-shadow-default);
+  }
+}
+.CardsItemDay_content {
+  margin: 11px 0 0 11px;
+  
+}
+
+.CardsItemDay_day {
+  color: var(--text-color-default);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  margin-bottom: 7px;
+}
+
+.CardsItemDay_day_info {
+  color: $base-color;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 12px;
+}
+.CardsItemDay_img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 13px;
+}
+.CardsItemDay_temp_day {
+  color: var(--text-color-default);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.CardsItemDay_temp_night {
+  color: $base-color;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 6px;
+}
+.CardsItemDay_info {
+  color: $base-color;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+// ?? 

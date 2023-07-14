@@ -1,0 +1,71 @@
+@import '../../styles/variables.scss';
+.PopupBlur{
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+
+	background: rgba($color: #000000, $alpha: 0.25);
+}
+.Popup{
+	display: flex;
+	position: absolute;
+	top: 40%;
+	left: calc(50% - 325px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 750px;
+	padding: 40px;
+	width: 100%;
+	height: 100hv;
+	background-color: $light-background;
+	box-shadow: $box-shadow;
+	border-radius: $border-radius;
+	z-index: 100;
+	justify-content: space-around;
+
+}
+.Popup_closeIcon{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	cursor: pointer;
+	svg{
+		transition: 0.3s;
+	}
+	&:hover{
+		svg{
+			transform: rotate(360deg);
+		}
+	}
+}
+
+.Popup_info_temp{
+	font-weight: 500;
+	font-size: 60px;
+	color: $primary-color;
+	margin-bottom: 12px;
+}
+.Popup_info_day{
+	font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 12px;
+}
+.Popup_info_img {
+	svg {
+	  width: 53px;
+	  height: 53px;
+	}
+	margin-bottom: 12px;
+ }
+ .Popup_info_time,
+ .Popup_info_city {
+	font-size: 15px;
+	color: $base-color;
+ }
+
+
+ 
