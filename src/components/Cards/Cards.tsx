@@ -26,9 +26,8 @@ const Cards: React.FC<CardsProps> = ({ name }) => {
         <div className={s.cardsButtons}>
           <ButtonDays />
         </div>
-        <div className={s.cardsWeek}>
-          {isLoading ? <h2>Loading...</h2> : <CardsWeek forecast={forecast} />}
-        </div>
+
+        {isLoading ? <h2>Loading...</h2> : <CardsWeek forecast={forecast} />}
       </div>
     </div>
   );

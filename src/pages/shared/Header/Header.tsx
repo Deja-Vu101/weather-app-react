@@ -55,20 +55,40 @@ const Header = () => {
   return (
     <header className={s.Header}>
       <div className={s.header_wrapper}>
-        <div className={s.imgLogoHeader}>
-          <a href="/">
-            <GlobalSvgSelector id="header-logo" />
+        <div className={s.Header_Logo}>
+          <div className={s.imgLogoHeader}>
+            <a href="/">
+              <GlobalSvgSelector id="header-logo" />
+            </a>
+          </div>
+          <a href="/" className={s.logoText}>
+            React weather
           </a>
         </div>
-        <a href="/" className={s.logoText}>
-          React weather
-        </a>
-      </div>
 
-      <div className={s.header_wrapper}>
-        <div className={s.changeTheme} onClick={changeTheme}>
-          <GlobalSvgSelector id="change-theme" />
+        <div className={s.Search_City}>
+          <div className={s.changeTheme} onClick={changeTheme}>
+            <GlobalSvgSelector id="change-theme" />
+          </div>
+          <div className={s.Search_City_Input}>
+            <input
+              style={
+                Object.keys(weather).length == 0
+                  ? { display: "none" }
+                  : { display: "block" }
+              }
+              className={s.inputSearchCity}
+              type="text"
+              placeholder="Search a new city..."
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                onChange(e.target.value)
+              }
+              value={currentValueCity}
+            />
+          </div>
         </div>
+      </div>
+      <div className={s.Header_MobileInput}>
         <input
           style={
             Object.keys(weather).length == 0

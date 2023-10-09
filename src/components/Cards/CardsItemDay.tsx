@@ -5,21 +5,26 @@ import s from "./Cards.module.scss";
 
 interface CardsItemDayProps {
   //day: Day;
-  obj: List
-  daysOfWeek: { [key: number]: string }
-  months: { [key: number]: string }
-  dateString: string
-  forecastImg: string
+  obj: List;
+  daysOfWeek: { [key: number]: string };
+  months: { [key: number]: string };
+  dateString: string;
+  forecastImg: string;
 }
 
-const CardsItemDay: React.FC<CardsItemDayProps> = ({ obj, daysOfWeek, months, dateString, forecastImg }) => {
- 
+const CardsItemDay: React.FC<CardsItemDayProps> = ({
+  obj,
+  daysOfWeek,
+  months,
+  dateString,
+  forecastImg,
+}) => {
   const date = new Date(dateString);
   const day = date.getDay();
   const month = date.getMonth();
+
   
-  console.log(forecastImg);
-  
+
   return (
     <div className={s.CardsItemDay}>
       <div className={s.CardsItemDay_content}>
@@ -36,9 +41,7 @@ const CardsItemDay: React.FC<CardsItemDayProps> = ({ obj, daysOfWeek, months, da
         <div className={s.CardsItemDay_temp_night}>
           {Math.round(obj.main.temp_min)}
         </div>
-        <div className={s.CardsItemDay_description}>
-          {forecastImg}
-        </div>
+        <div className={s.CardsItemDay_description}>{forecastImg}</div>
       </div>
     </div>
   );

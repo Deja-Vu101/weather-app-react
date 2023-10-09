@@ -43,56 +43,56 @@ const CardsWeek: React.FC<ICardsWeek> = ({ forecast }) => {
 
   dayNow++;
 
- 
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToShow: 5,
+    slidesToScroll: 2,
     responsive: [
       {
-        breakpoint: 1919,
+        breakpoint: 1000,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: false,
           dots: false,
-          display: 'none',
+          display: "none",
         },
       },
       {
-        breakpoint: 1250,
+        breakpoint: 800,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           infinite: true,
           dots: true,
         },
       },
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            dots:true
+          },
         },
-      },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots: true,
+          arrows: false,
         },
       },
     ],
-    
   };
   return (
     <div className={s.CardsWeek}>
       <div className={s.CardsWeek_wrapper}>
-        <div className={s.CardsWeek_wrapper_conteiner}>
-          <div className='Slider'>
+        <div className={s.CardsWeek_wrapper_container}>
+          <div className="Slider">
             <Slider {...settings}>
               <CardsItemToday
                 daysOfWeek={daysOfWeek}
@@ -100,7 +100,10 @@ const CardsWeek: React.FC<ICardsWeek> = ({ forecast }) => {
                 months={months}
               />
               {forecast.list?.map((f) => {
-                if (f.dt_txt === `2023-07-${dayNow} 12:00:00`) {
+                if (
+                  f.dt_txt ===
+                  `2023-10-${dayNow < 10 ? "0" + dayNow : dayNow} 15:00:00`
+                ) {
                   dayNow++;
                   return (
                     <CardsItemDay
@@ -109,12 +112,11 @@ const CardsWeek: React.FC<ICardsWeek> = ({ forecast }) => {
                       daysOfWeek={daysOfWeek}
                       dateString={f.dt_txt}
                       months={months}
-                      forecastImg = {f.weather[0].description}
+                      forecastImg={f.weather[0].description}
                     />
                   );
-                } else {
-                  return null;
                 }
+                return null;
               })}
             </Slider>
           </div>

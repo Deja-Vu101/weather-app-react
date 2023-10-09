@@ -1,17 +1,32 @@
 .Header {
-  display: flex;
+  max-width: 1200px;
   justify-content: space-between;
+  margin: 0 auto;
   padding-top: 20px;
 }
 .header_wrapper {
-  display: inline;
-  width: 1200px;
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 15px 0 15px;
+  justify-content: space-between;
+  margin: 0 15px;
 }
+.Header_Logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
+}
+.Search_City {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
+}
+
 .logoText {
   font-family: "Poppins";
   color: #4793ff;
@@ -19,14 +34,35 @@
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
+
+  @media (max-width: 375px) {
+    font-size: 20px;
+  }
 }
+
 .changeTheme {
   cursor: pointer;
 }
-
+.Search_City_Input {
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
 .inputSearchCity {
   width: 140px;
   height: 37px;
   border-radius: 10px;
   padding-left: 10px;
+}
+.Header_MobileInput {
+  display: flex;
+  justify-content: center;
+  margin: 15px 15px 0 15px;
+
+  .inputSearchCity {
+    width: 300px;
+  }
+  @media (min-width: 481px) {
+    display: none;
+  }
 }

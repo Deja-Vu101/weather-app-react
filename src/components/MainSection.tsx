@@ -11,7 +11,7 @@ const MainSection: React.FC = () => {
 
   return (
     <section className={s.MainSection}>
-      <div className={s.container}>
+      <div className={s.MainSection_container}>
         <div className={s.MainSection_wrapper}>
           {isLoading || Object.keys(weather).length === 0 ? (
             <h2>Loading...</h2>

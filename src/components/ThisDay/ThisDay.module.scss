@@ -11,6 +11,9 @@
   @media (max-width: 900px) {
     margin: 0 auto;
   }
+  @media (max-width: 480px) {
+    width: 290px;
+  }
 }
 .ThisDay_content {
   padding: 20px;
@@ -60,19 +63,15 @@
   background: var(--components-background-default);
   box-shadow: $box-shadow;
   position: relative;
+  padding: 20px 0;
 
   @media (max-width: 1250px) {
     overflow: hidden;
-    width: 510px;
+    max-width: 510px;
   }
 
-  @media (max-width: 900px) {
-    padding: 20px;
-    width: 500px;
-  }
-  @media (max-width: 580px) {
-    margin-bottom: 30px;
-    width: 430px;
+  @media (max-width: 480px) {
+    width: 350px;
   }
 }
 
@@ -81,6 +80,10 @@
   flex-direction: column;
   gap: 24px;
   margin-left: 32px;
+
+  @media (max-width: 660px) {
+    margin-left: 15px;
+  }
 }
 .infoItem {
   display: flex;
@@ -103,6 +106,10 @@
   background-color: var(--components-background-default);
   box-shadow: $box-shadow;
   margin-right: 20px;
+
+  @media (max-width: 660px) {
+    margin-right: 5px;
+  }
 }
 .infoItem_title {
   color: $base-color;
@@ -132,8 +139,13 @@
     overflow: hidden;
   }
   @media (max-width: 900px) {
-    top: 00;
+    top: 0;
     left: 300px;
+    overflow: hidden;
+  }
+  @media (max-width: 700px) {
+    top: 0;
+    left: 250px;
     overflow: hidden;
   }
 }

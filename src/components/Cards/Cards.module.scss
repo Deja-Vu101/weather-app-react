@@ -6,10 +6,16 @@
     width: 450px;
     margin: 0 auto;
   }
+  @media (max-width: 480px) {
+    width: 380px;
+  }
 }
 .Cards_wrapper {
   display: flex;
   flex-direction: column;
+
+  margin: 0 15px;
+ 
 }
 .cardsButtons {
   margin-bottom: 7px;
@@ -42,7 +48,7 @@
   cursor: pointer;
 
   @media (max-width: 900px) {
-    padding: 3px 10px;
+    padding: 3px 3px;
     font-size: 15px;
   }
 }
@@ -66,19 +72,29 @@
     font-size: 16px;
   }
 }
+.Word_For{
+  margin-right: 5px;
 
-.CardsWeek_wrapper_conteiner {
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+.CardsWeek_wrapper_container {
   display: flex;
-
   justify-content: space-around;
 
   padding: 20px;
+
+  @media (max-width: 480px) {
+    padding: 20px 0 25px 0;
+  }
 }
 .CardsWeek {
   border-radius: 0px 0px 20px 20px;
   background: var(--components-background-default);
 
   box-shadow: var(--card-shadow-default);
+
 }
 .CardsItemDay {
   width: 149px;
@@ -89,6 +105,12 @@
   &:hover {
     box-shadow: var(--card-shadow-default);
   }
+
+  @media (max-width: 480px) {
+    width: 145px;
+    height: 200px;
+  }
+
 }
 .CardsItemDay_content {
   padding: 11px 0 0 11px;
