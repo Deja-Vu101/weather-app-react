@@ -1,5 +1,22 @@
 @import "../../styles/variables.scss";
 
+.HourlyForecast {
+  width: 100%;
+}
+.HourlyForecast_Date {
+  text-transform: none;
+  color: $primary-color;
+}
+.HourlyForecast_Title {
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--text-color-default);
+  margin: 0;
+}
+
+@import "../../styles/variables.scss";
+
 .ThisDay {
   width: 400px;
   height: 300px;
@@ -78,8 +95,10 @@
 .infoItems {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-left: 32px;
+  gap: 14px;
+  max-width: inherit;
+  margin: 0 auto;
+  margin-top: 40px;
 
   @media (max-width: 660px) {
     margin-left: 15px;
@@ -121,7 +140,6 @@
   margin-right: 20px;
 }
 .infoItem_description {
-  text-align: end;
   color: var(--text-color-default);
   font-size: 14px;
   font-style: normal;
@@ -155,4 +173,9 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
+}
+
+.ThisDayHourly {
+  max-width: 450px;
+  margin: 0 auto;
 }

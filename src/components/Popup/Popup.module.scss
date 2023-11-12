@@ -4,26 +4,44 @@
   z-index: 100;
   width: 100%;
   height: 100vh;
-
   background: rgba($color: #000000, $alpha: 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  @media (max-width: 650px) {
+    height: 100%;
+  }
 }
+
 .Popup {
   display: flex;
+  flex-direction: column;
   position: absolute;
-  top: 40%;
-  left: calc(50% - 325px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 750px;
   padding: 40px;
-  width: 100%;
-  height: 100hv;
-  background-color: $light-background;
+  width: 85%;
+  min-height: 400px;
+  background-color: var(--components-background-default);
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   z-index: 100;
   justify-content: space-around;
+
+  @media (max-width: 650px) {
+    transform: translate(-53%, -30%);
+    margin: 15px;
+  }
+}
+.Popup_About {
+  display: flex;
 }
 .Popup_closeIcon {
   position: absolute;

@@ -2,9 +2,10 @@ import React from "react";
 import s from "../Cards/Cards.module.scss";
 import { useTypedSelector } from "../../hooks";
 import { GlobalSvgSelector } from "../../assets/img/icons/GlobalSvgSelector";
+import { usePopup } from "../../context/PopupContext";
 
 interface CardsItemTodayProps {
-  daysOfWeek: {};
+  daysOfWeek: any;
   dateString: string;
   months: { [key: number]: string };
 }
@@ -18,26 +19,36 @@ const CardsItemToday: React.FC<CardsItemTodayProps> = ({
 
   const date = new Date(dateString);
   const month = date.getMonth();
+  const temperatureMax = Math.round(weather.main?.temp_max);
+  const temperatureMin = Math.round(weather.main?.temp_min);
+  const weatherDescription = weather.weather[0].description;
+
+  const day = date.getDay();
+
+  const { openPopup } = usePopup();
+
+  const handleCardClick = () => {
+    openPopup({
+      date: date.getDate(),
+      day: daysOfWeek[day],
+      month: months[month],
+      apiDate: dateString,
+    });
+  };
 
   return (
-    <div className={s.CardsItemDay}>
+    <div className={s.CardsItemDay} onClick={handleCardClick}>
       <div className={s.CardsItemDay_content}>
         <div className={s.CardsItemDay_day}>Today</div>
         <div className={s.CardsItemDay_day_info}>
           {date.getDate()} {months[month]}
         </div>
         <div className={s.CardsItemDay_img}>
-          <GlobalSvgSelector id={weather.weather[0].description} />
+          <GlobalSvgSelector id={weatherDescription} />
         </div>
-        <div className={s.CardsItemDay_temp_day}>
-          {Math.round(weather.main?.temp_max)}
-        </div>
-        <div className={s.CardsItemDay_temp_night}>
-          {Math.round(weather.main?.temp_min)}
-        </div>
-        <div className={s.CardsItemDay_description}>
-          {weather.weather[0].description}
-        </div>
+        <div className={s.CardsItemDay_temp_day}>{temperatureMax}</div>
+        <div className={s.CardsItemDay_temp_night}>{temperatureMin}</div>
+        <div className={s.CardsItemDay_description}>{weatherDescription}</div>
       </div>
     </div>
   );

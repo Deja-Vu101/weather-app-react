@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useTypedDispatch } from "../../hooks";
 import { fetchWeather } from "../../thunks/fetchWeather";
 import s from "./firstSearch.module.scss";
+import button from "../UpdatePlan/updatePlan.module.scss";
+import MainLoader from "../Loaders/MainLoader";
 
 interface FisrtSearchCityProps {
   error: any;
@@ -13,14 +15,14 @@ const FisrtSearchCity: React.FC<FisrtSearchCityProps> = ({
   isLoading,
 }) => {
   const dispatch = useTypedDispatch();
-  const [serchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
-  const onChangeSearch = (e: string) => {
-    setSearchValue(e);
+  const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
   };
 
   const clickButtonSearch = () => {
-    dispatch(fetchWeather(serchValue));
+    dispatch(fetchWeather(searchValue));
   };
 
   return (
@@ -28,7 +30,9 @@ const FisrtSearchCity: React.FC<FisrtSearchCityProps> = ({
       <div className={s.container}>
         <div className={s.firstSearch_wrapper}>
           {isLoading ? (
-            <h2>Loading...</h2>
+            <div className={s.Loader}>
+              <MainLoader />
+            </div>
           ) : (
             <>
               <div className={s.FisrtSearchCity_message}>
@@ -39,14 +43,12 @@ const FisrtSearchCity: React.FC<FisrtSearchCityProps> = ({
               <div className={s.firstSearch_input}>
                 <input
                   type="text"
-                  value={serchValue}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    onChangeSearch(e.target.value)
-                  }
+                  value={searchValue}
+                  onChange={onChangeSearch}
                 />
               </div>
-              <div className={s.searchButton} onClick={clickButtonSearch}>
-                Do it
+              <div className={button.Button} onClick={clickButtonSearch}>
+                Search it
               </div>
             </>
           )}

@@ -1,81 +1,52 @@
-import { GlobalSvgSelector } from "../../assets/img/icons/GlobalSvgSelector";
 import s from "./ThisDay.module.scss";
 import cloud from "../../assets/img/Cloud.svg";
-import { IRootWeather } from "../../types";
 import { checkPressure, getWindDirection } from "../../services";
+import { IRootWeather } from "../../types";
+import ThisDayItem from "./ThisDayItem";
 
 interface ThisDayInfoProps {
   weather: IRootWeather;
 }
 
 const ThisDayInfo: React.FC<ThisDayInfoProps> = ({ weather }) => {
+  const temperature = Math.round(weather.main.temp);
+  const feelsLike = Math.round(weather.main.feels_like);
+  const pressure = weather.main.pressure;
+  const humidity = weather.main.humidity;
+  const windSpeed = weather.wind.speed;
+  const windDirection = getWindDirection(weather.wind.deg);
+
   return (
     <div className={s.ThisDayInfo}>
       <div className={s.ThisDayInfo_content}>
         <div className={s.infoItems}>
-          <div className={s.infoItem}>
-            <div className={s.infoItem_leftContent}>
-              <div className={s.infoItem_img}>
-                <GlobalSvgSelector id="temp" />
-              </div>
-              <div className={s.infoItem_title}>Temperature</div>
-            </div>
+          <ThisDayItem
+            iconId="temp"
+            title="Temperature"
+            description={`${temperature}° feels like ${feelsLike}°`}
+          />
 
-            <div className={s.infoItem_RightContent}>
-              <div className={s.infoItem_description}>
-                {Math.round(weather.main.temp)}° feels like{" "}
-                {Math.round(weather.main.feels_like)}°
-              </div>
-            </div>
-          </div>
+          <ThisDayItem
+            iconId="pressure"
+            title="Pressure"
+            description={`${pressure} hPa - ${checkPressure(pressure)}`}
+          />
 
-          <div className={s.infoItem}>
-            <div className={s.infoItem_leftContent}>
-              <div className={s.infoItem_img}>
-                <GlobalSvgSelector id="pressure" />
-              </div>
-              <div className={s.infoItem_title}>Precipitation</div>
-            </div>
-            <div className={s.infoItem_RightContent}>
-              <div className={s.infoItem_description}>{`${
-                weather.main.pressure
-              } hPa - ${checkPressure(weather.main.pressure)}`}</div>
-            </div>
-          </div>
+          <ThisDayItem
+            iconId="precipitation"
+            title="Humidity"
+            description={`${humidity}%`}
+          />
 
-          <div className={s.infoItem}>
-            <div className={s.infoItem_leftContent}>
-              <div className={s.infoItem_img}>
-                <GlobalSvgSelector id="precipitation" />
-              </div>
-              <div className={s.infoItem_title}>Humidity</div>
-            </div>
-            <div className={s.infoItem_RightContent}>
-              <div className={s.infoItem_description}>
-                {weather.main.humidity}%
-              </div>
-            </div>
-          </div>
-
-          <div className={s.infoItem}>
-            <div className={s.infoItem_leftContent}>
-              <div className={s.infoItem_img}>
-                <GlobalSvgSelector id="wind" />
-              </div>
-              <div className={s.infoItem_title}>Wind</div>
-            </div>
-            <div className={s.infoItem_RightContent}>
-              <div className={s.infoItem_description}>
-                {`${weather.wind.speed} m/s ${getWindDirection(
-                  weather.wind.deg
-                )}`}
-              </div>
-            </div>
-          </div>
+          <ThisDayItem
+            iconId="wind"
+            title="Wind"
+            description={`${windSpeed} m/s ${windDirection}`}
+          />
         </div>
 
         <div className={s.backgroundImage}>
-          <img src={cloud} alt="" />
+          <img src={cloud} alt="Cloud" />
         </div>
       </div>
     </div>

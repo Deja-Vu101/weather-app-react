@@ -83,3 +83,10 @@ export interface IError {
   cod: string | undefined;
   message: string;
 }
+
+export interface IPopupDay {
+  date: number;
+  day: string;
+  month: string;
+  apiDate: string;
+}

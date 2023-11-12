@@ -1,6 +1,5 @@
-import { GlobalSvgSelector } from "../../../assets/img/icons/GlobalSvgSelector";
+import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
-import { useEffect, useState } from "react";
 import { useTheme } from "../../../hooks/useTheme";
 import { Theme } from "../../../context/ThemeContext";
 import {
@@ -9,10 +8,15 @@ import {
   useTypedSelector,
 } from "../../../hooks";
 import { fetchWeather } from "../../../thunks/fetchWeather";
+import { GlobalSvgSelector } from "../../../assets/img/icons/GlobalSvgSelector";
 
 const Header = () => {
   const { weather } = useTypedSelector((state) => state.currentWeatherSlice);
   const theme = useTheme();
+  const dispatch = useTypedDispatch();
+
+  const [currentValueCity, setCurrentValueCity] = useState("");
+  const debounce = useDebounce(currentValueCity, 800);
 
   const changeTheme = () => {
     theme.changeTheme(theme.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
@@ -21,7 +25,7 @@ const Header = () => {
   useEffect(() => {
     const root = document.querySelector(":root") as HTMLElement;
 
-    const comp = [
+    const components = [
       "body-background",
       "components-background",
       "card-background",
@@ -29,28 +33,25 @@ const Header = () => {
       "text-color",
     ];
 
-    comp.forEach((comp) => {
+    components.forEach((component) => {
       root.style.setProperty(
-        `--${comp}-default`,
-        `var(--${comp}-${theme.theme})`
+        `--${component}-default`,
+        `var(--${component}-${theme.theme})`
       );
     });
   }, [theme.theme]);
-
-  const [currentValueCity, setCurrentValueCity] = useState("");
-  const debounce = useDebounce(currentValueCity, 800);
-
-  const onChange = (e: string) => {
-    setCurrentValueCity(e);
-  };
-
-  const dispatch = useTypedDispatch();
 
   useEffect(() => {
     if (currentValueCity.length !== 0) {
       dispatch(fetchWeather(currentValueCity));
     }
   }, [debounce]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCurrentValueCity(e.target.value);
+  };
+
+  const isWeatherDataAvailable = Object.keys(weather).length === 0;
 
   return (
     <header className={s.Header}>
@@ -73,16 +74,14 @@ const Header = () => {
           <div className={s.Search_City_Input}>
             <input
               style={
-                Object.keys(weather).length == 0
+                isWeatherDataAvailable
                   ? { display: "none" }
                   : { display: "block" }
               }
               className={s.inputSearchCity}
               type="text"
               placeholder="Search a new city..."
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                onChange(e.target.value)
-              }
+              onChange={handleInputChange}
               value={currentValueCity}
             />
           </div>
@@ -91,16 +90,12 @@ const Header = () => {
       <div className={s.Header_MobileInput}>
         <input
           style={
-            Object.keys(weather).length == 0
-              ? { display: "none" }
-              : { display: "block" }
+            isWeatherDataAvailable ? { display: "none" } : { display: "block" }
           }
           className={s.inputSearchCity}
           type="text"
           placeholder="Search a new city..."
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            onChange(e.target.value)
-          }
+          onChange={handleInputChange}
           value={currentValueCity}
         />
       </div>

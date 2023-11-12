@@ -1,0 +1,77 @@
+@import "../../../styles/variables.scss";
+
+.HourlyForecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.HourlyCards_Wrapper {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 650px) {
+    flex-wrap: wrap;
+    
+  }
+}
+.HourlyCards_Image {
+  width: 45px;
+}
+.Hourly_Item {
+  max-width: 80px;
+  
+}
+.HourlyCards_Item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  width: 90px;
+  height: 140px;
+  margin-right: 10px;
+
+  background-color: var(--card-background-default);
+
+  color: var(--text-color-default);
+
+  cursor: pointer;
+
+  @media (max-width: 810px) {
+    font-size: 15px;
+  }
+  @media (max-width: 720px) {
+    height: 110px;
+    margin-bottom: 5px;
+  }
+  @media (max-width: 390px) {
+    width: 60px;
+    height: 100px;
+  }
+}
+.HourlyCards_Item:hover {
+  box-shadow: var(--card-shadow-default);
+}
+.Item_Time {
+  font-size: 18px;
+  color: $base-color;
+}
+.HourlyCards_Description {
+  padding: 3px;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
+}
+.HourlyCards_Item.hourly_active {
+  width: 100px;
+  box-shadow: var(--card-shadow-default);
+
+  @media (max-width: 390px) {
+    width: 70px;
+  }
+}

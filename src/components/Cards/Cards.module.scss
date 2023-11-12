@@ -15,7 +15,6 @@
   flex-direction: column;
 
   margin: 0 15px;
- 
 }
 .cardsButtons {
   margin-bottom: 7px;
@@ -48,8 +47,22 @@
   cursor: pointer;
 
   @media (max-width: 900px) {
-    padding: 3px 3px;
+    padding: 10px 10px;
     font-size: 15px;
+  }
+  @media (max-width: 650px) {
+    padding: 6px 6px;
+    font-size: 15px;
+  }
+}
+.ButtonDays_cancel {
+  .ButtonDays_filterBtn {
+    font-size: 17px;
+    padding: 10px 15px;
+
+    @media (max-width: 580px) {
+      padding: 8px 8px;
+    }
   }
 }
 .active {
@@ -68,11 +81,14 @@
   cursor: pointer;
 
   @media (max-width: 900px) {
-    padding: 6px 12px;
+    padding: 13px 12px;
     font-size: 16px;
   }
+  @media (max-width: 650px) {
+    padding: 10px 10px;
+  }
 }
-.Word_For{
+.Word_For {
   margin-right: 5px;
 
   @media (max-width: 480px) {
@@ -80,9 +96,9 @@
   }
 }
 .CardsWeek_wrapper_container {
+  position: relative;
   display: flex;
   justify-content: space-around;
-
   padding: 20px;
 
   @media (max-width: 480px) {
@@ -94,7 +110,6 @@
   background: var(--components-background-default);
 
   box-shadow: var(--card-shadow-default);
-
 }
 .CardsItemDay {
   width: 149px;
@@ -103,6 +118,7 @@
   background: var(--card-background-default);
 
   &:hover {
+    cursor: pointer;
     box-shadow: var(--card-shadow-default);
   }
 
@@ -110,7 +126,6 @@
     width: 145px;
     height: 200px;
   }
-
 }
 .CardsItemDay_content {
   padding: 11px 0 0 11px;

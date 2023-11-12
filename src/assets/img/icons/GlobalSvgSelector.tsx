@@ -238,7 +238,7 @@ export const GlobalSvgSelector: React.FC<GlobalSvgSelectorProps> = ({ id }) => {
           xmlns="http://www.w3.org/2000/svg"
           width="36"
           height="36"
-          viewBox="0 0 36 36"
+          viewBox="0 0 35 27"
           fill="none"
         >
           <g opacity="0.88">
@@ -323,8 +323,8 @@ export const GlobalSvgSelector: React.FC<GlobalSvgSelectorProps> = ({ id }) => {
               y2="28"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#9FC7FF" />
-              <stop offset="1" stop-color="#9BC1F5" />
+              <stop stopColor="#9FC7FF" />
+              <stop offset="1" stopColor="#9BC1F5" />
             </linearGradient>
             <radialGradient
               id="paint1_radial_2_537"
@@ -334,8 +334,8 @@ export const GlobalSvgSelector: React.FC<GlobalSvgSelectorProps> = ({ id }) => {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(10.7539 -24.6966) rotate(-90) scale(20.9574 6.69705)"
             >
-              <stop stop-color="#486DA8" stop-opacity="0.4" />
-              <stop offset="1" stop-color="#486DA8" stop-opacity="0" />
+              <stop stopColor="#486DA8" stopOpacity="0.4" />
+              <stop offset="1" stopColor="#486DA8" stopOpacity="0" />
             </radialGradient>
           </defs>
         </svg>
@@ -365,8 +365,8 @@ export const GlobalSvgSelector: React.FC<GlobalSvgSelectorProps> = ({ id }) => {
               y2="28"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#9FC7FF" />
-              <stop offset="1" stop-color="#9BC1F5" />
+              <stop stopColor="#9FC7FF" />
+              <stop offset="1" stopColor="#9BC1F5" />
             </linearGradient>
             <radialGradient
               id="paint1_radial_2_525"
@@ -376,8 +376,8 @@ export const GlobalSvgSelector: React.FC<GlobalSvgSelectorProps> = ({ id }) => {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(10.7539 -24.6966) rotate(-90) scale(20.9574 6.69705)"
             >
-              <stop stop-color="#486DA8" stop-opacity="0.4" />
-              <stop offset="1" stop-color="#486DA8" stop-opacity="0" />
+              <stop stopColor="#486DA8" stopOpacity="0.4" />
+              <stop offset="1" stopColor="#486DA8" stopOpacity="0" />
             </radialGradient>
           </defs>
         </svg>
@@ -456,8 +456,8 @@ export const GlobalSvgSelector: React.FC<GlobalSvgSelectorProps> = ({ id }) => {
               y2="28"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#9FC7FF" />
-              <stop offset="1" stop-color="#9BC1F5" />
+              <stop stopColor="#9FC7FF" />
+              <stop offset="1" stopColor="#9BC1F5" />
             </linearGradient>
             <radialGradient
               id="paint1_radial_2_537"
@@ -467,8 +467,49 @@ export const GlobalSvgSelector: React.FC<GlobalSvgSelectorProps> = ({ id }) => {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(10.7539 -24.6966) rotate(-90) scale(20.9574 6.69705)"
             >
-              <stop stop-color="#486DA8" stop-opacity="0.4" />
-              <stop offset="1" stop-color="#486DA8" stop-opacity="0" />
+              <stop stopColor="#486DA8" stopOpacity="0.4" />
+              <stop offset="1" stopColor="#486DA8" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      );
+    case "moderate rain":
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+          <path
+            d="M16.218 32.926L14.118 37.924C13.798 38.688 14.156 39.568 14.92 39.888C15.684 40.208 16.564 39.85 16.884 39.086L18.984 34.088C19.304 33.324 18.946 32.444 18.182 32.124C17.418 31.804 16.538 32.162 16.218 32.926ZM26.218 30.926L24.118 35.924C23.798 36.688 24.156 37.568 24.92 37.888C25.684 38.208 26.564 37.85 26.884 37.086L28.984 32.088C29.304 31.324 28.946 30.444 28.182 30.124C27.418 29.804 26.538 30.162 26.218 30.926Z"
+            fill="#66AFEB"
+          />
+          <path
+            d="M14 28C9.582 28 6 24.418 6 20C6 15.582 9.582 12 14 12C14.834 12 15.636 12.128 16.392 12.364C17.518 8.68 20.946 6 25 6C29.97 6 34 10.03 34 15C34 15.47 33.964 15.93 33.894 16.38C34.55 16.134 35.258 16 36 16C39.314 16 42 18.686 42 22C42 25.314 39.314 28 36 28H14Z"
+            fill="url(#paint0_linear_2_537)"
+          />
+          <path
+            d="M16 15C16 19.97 20.03 24 25 24C29.502 24 33.23 20.696 33.894 16.38C34.55 16.134 35.258 16 36 16C39.314 16 42 18.686 42 22C42 25.314 39.314 28 36 28H14C9.582 28 6 24.418 6 20C6 15.582 9.582 12 14 12C14.834 12 15.636 12.128 16.392 12.364C16.136 13.198 16 14.082 16 15Z"
+            fill="url(#paint1_radial_2_537)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_2_537"
+              x1="24"
+              y1="6"
+              x2="24"
+              y2="28"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#9FC7FF" />
+              <stop offset="1" stopColor="#9BC1F5" />
+            </linearGradient>
+            <radialGradient
+              id="paint1_radial_2_537"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(10.7539 -24.6966) rotate(-90) scale(20.9574 6.69705)"
+            >
+              <stop stopColor="#486DA8" stopOpacity="0.4" />
+              <stop offset="1" stopColor="#486DA8" stopOpacity="0" />
             </radialGradient>
           </defs>
         </svg>
@@ -646,25 +687,25 @@ export const GlobalSvgSelector: React.FC<GlobalSvgSelectorProps> = ({ id }) => {
     case "closeIcon":
       return (
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
           <g
             id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></g>
           <g id="SVGRepo_iconCarrier">
             {" "}
             <path
               d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5"
               stroke="#4793ff"
-              stroke-width="1.5"
-              stroke-linecap="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
             ></path>{" "}
             <path
               d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7"
               stroke="#4793ff"
-              stroke-width="1.5"
-              stroke-linecap="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
             ></path>{" "}
           </g>
         </svg>

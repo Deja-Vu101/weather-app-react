@@ -1,9 +1,10 @@
+import React, { useEffect, useState } from "react";
 import { useTypedDispatch, useTypedSelector } from "../../hooks";
 import { fetchForecast8Days } from "../../thunks/fetchForecast8Days";
 import ButtonDays from "./ButtonDays";
-import s from "./Cards.module.scss";
 import CardsWeek from "./CardsWeek";
-import { useEffect } from "react";
+import s from "./Cards.module.scss";
+import MainLoader from "../Loaders/MainLoader";
 
 interface CardsProps {
   name: string;
@@ -11,10 +12,12 @@ interface CardsProps {
 
 const Cards: React.FC<CardsProps> = ({ name }) => {
   const dispatch = useTypedDispatch();
+  const filterOptions = ["for5", "for16", "formonth"];
+  const [filterButton, setFilterButton] = useState("for5");
 
   useEffect(() => {
     dispatch(fetchForecast8Days(name));
-  }, []);
+  }, [dispatch, name]);
 
   const { forecast, error, isLoading } = useTypedSelector(
     (state) => state.forecast8Days
@@ -24,10 +27,18 @@ const Cards: React.FC<CardsProps> = ({ name }) => {
     <div className={s.Cards}>
       <div className={s.Cards_wrapper}>
         <div className={s.cardsButtons}>
-          <ButtonDays />
+          <ButtonDays
+            filterOptions={filterOptions}
+            filterButton={filterButton}
+            setFilterButton={setFilterButton}
+          />
         </div>
 
-        {isLoading ? <h2>Loading...</h2> : <CardsWeek forecast={forecast} />}
+        {isLoading ? (
+          <MainLoader />
+        ) : (
+          <CardsWeek forecast={forecast} filterButton={filterButton} />
+        )}
       </div>
     </div>
   );
