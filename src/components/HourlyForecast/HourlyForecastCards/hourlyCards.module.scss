@@ -15,15 +15,22 @@
 
   @media (max-width: 650px) {
     flex-wrap: wrap;
-    
+  }
+
+  @media (max-width: 465px) {
+    margin: 0 auto;
+    width: 300px;
   }
 }
 .HourlyCards_Image {
   width: 45px;
+
+  @media (max-width: 465px) {
+    width: 35px;
+  }
 }
 .Hourly_Item {
   max-width: 80px;
-  
 }
 .HourlyCards_Item {
   display: flex;
@@ -33,7 +40,7 @@
   text-align: center;
   width: 90px;
   height: 140px;
-  margin-right: 10px;
+  margin-right: 6px;
 
   background-color: var(--card-background-default);
 
@@ -51,6 +58,10 @@
   @media (max-width: 390px) {
     width: 60px;
     height: 100px;
+  }
+
+  @media (max-width: 465px) {
+    width: 60px;
   }
 }
 .HourlyCards_Item:hover {
@@ -71,7 +82,7 @@
   width: 100px;
   box-shadow: var(--card-shadow-default);
 
-  @media (max-width: 390px) {
+  @media (max-width: 465px) {
     width: 70px;
   }
 }

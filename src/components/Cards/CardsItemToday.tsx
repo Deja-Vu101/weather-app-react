@@ -16,6 +16,7 @@ const CardsItemToday: React.FC<CardsItemTodayProps> = ({
   months,
 }) => {
   const { weather } = useTypedSelector((state) => state.currentWeatherSlice);
+  const { list } = useTypedSelector((state) => state.forecast8Days.forecast);
 
   const date = new Date(dateString);
   const month = date.getMonth();
@@ -27,13 +28,26 @@ const CardsItemToday: React.FC<CardsItemTodayProps> = ({
 
   const { openPopup } = usePopup();
 
+  let arrTime: string[] = [];
   const handleCardClick = () => {
-    openPopup({
+    list.forEach((i) => {
+      if (dateString.slice(0, 10) === i.dt_txt.slice(0, 10)) {
+        arrTime.push(i.dt_txt.slice(10, 13).trim());
+      }
+    });
+
+    console.log(date.getDate());
+    
+    const popupData = {
       date: date.getDate(),
       day: daysOfWeek[day],
       month: months[month],
-      apiDate: dateString,
-    });
+      apiDate:
+        dateString.slice(0, 10) +
+        (arrTime.includes("15") ? " 15:00:00" : ` ${arrTime[0]}:00:00`),
+    };
+
+    openPopup(popupData);
   };
 
   return (

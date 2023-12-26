@@ -10,8 +10,6 @@ interface IOwnProps {
 const ThisDayHourly: React.FC<IOwnProps> = ({ apiDate, timeDay }) => {
   const { list } = useTypedSelector((state) => state.forecast8Days.forecast);
 
-  apiDate = apiDate.slice(11, 16) !== "15:00" ? list[0].dt_txt : apiDate;
-
   return (
     <div className={s.ThisDayHourly}>
       {list.map(
