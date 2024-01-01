@@ -20,16 +20,27 @@
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   background: var(--components-background-default);
+
+  @media (max-width: 300px) {
+    height: 250px;
+  }
 }
 .firstSearch_title {
   color: var(--text-color-default);
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 40px;
   margin-bottom: 40px;
+
+  @media (max-width: 240px) {
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 }
 .firstSearch_input {
   font-size: 18px;
   margin-bottom: 25px;
+
   input {
     display: flex;
     align-items: center;
@@ -37,7 +48,8 @@
     padding: 10px;
 
     @media (max-width: 290px) {
-      width: 143px;
+      width: 123px;
+      padding: 5px;
     }
   }
 }

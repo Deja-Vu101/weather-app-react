@@ -4,7 +4,7 @@ import { AxiosResponse } from "axios";
 import axios from "axios";
 import { AppDispatch } from "../store";
 import { currentWeatherSlice } from "../store/slices/currentWeatherSlice";
-import { IError, IRootWeather } from "../types";
+import { IRootWeather } from "../types";
 
 export const apiKey = "50f4aabc3300783a63bac96ec4d92341";
 

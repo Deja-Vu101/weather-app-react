@@ -36,8 +36,6 @@ const CardsItemToday: React.FC<CardsItemTodayProps> = ({
       }
     });
 
-    console.log(date.getDate());
-    
     const popupData = {
       date: date.getDate(),
       day: daysOfWeek[day],

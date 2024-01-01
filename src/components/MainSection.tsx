@@ -10,6 +10,7 @@ const MainSection: React.FC = () => {
   const { weather, isLoading } = useTypedSelector(
     (state) => state.currentWeatherSlice
   );
+
   const isDataAvailable = !isLoading && Object.keys(weather).length > 0;
 
   return (

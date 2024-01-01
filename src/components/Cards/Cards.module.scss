@@ -6,8 +6,10 @@
     width: 450px;
     margin: 0 auto;
   }
+
   @media (max-width: 480px) {
-    width: 380px;
+    min-width: 230px;
+    max-width: 95%;
   }
 }
 .Cards_wrapper {
@@ -15,6 +17,10 @@
   flex-direction: column;
 
   margin: 0 15px;
+
+  @media (max-width: 240px) {
+    margin: 0;
+  }
 }
 .cardsButtons {
   margin-bottom: 7px;
@@ -54,6 +60,14 @@
     padding: 6px 6px;
     font-size: 15px;
   }
+  @media (max-width: 240px) {
+    padding: 0 3px;
+    font-size: 12px;
+  }
+  @media (max-width: 335px) {
+    padding: 0 3px;
+    font-size: 13px;
+  }
 }
 .ButtonDays_cancel {
   .ButtonDays_filterBtn {
@@ -62,6 +76,15 @@
 
     @media (max-width: 580px) {
       padding: 8px 8px;
+    }
+
+    @media (max-width: 240px) {
+      padding: 6px 3px;
+      font-size: 13px;
+    }
+    @media (max-width: 335px) {
+      padding: 7px 4px;
+      font-size: 15px;
     }
   }
 }
@@ -87,6 +110,16 @@
   @media (max-width: 650px) {
     padding: 10px 10px;
   }
+  @media (max-width: 240px) {
+    padding: 6px 3px;
+    font-size: 13px;
+    font-weight: 550;
+  }
+  @media (max-width: 335px) {
+    padding: 7px 4px;
+    font-size: 15px;
+    font-weight: 550;
+  }
 }
 .Word_For {
   margin-right: 5px;
@@ -104,6 +137,11 @@
   @media (max-width: 480px) {
     padding: 20px 0 25px 0;
   }
+  @media (max-width: 240px) {
+    width: 230px;
+    justify-content: center;
+    padding: 10px 0 15px 0;
+  }
 }
 .CardsWeek {
   border-radius: 0px 0px 20px 20px;
@@ -111,6 +149,10 @@
 
   box-shadow: var(--card-shadow-default);
 
+  //@media (max-width: 240px) {
+  //  width: 230px;
+  //}
+  
 }
 .CardsItemDay {
   width: 149px;
@@ -127,6 +169,18 @@
     width: 145px;
     height: 200px;
   }
+  @media (max-width: 395px) {
+    width: 125px;
+    height: 200px;
+  }
+  @media (max-width: 345px) {
+    width: 95px;
+    height: 160px;
+  }
+  //@media (max-width: 240px) {
+  //  width: 95px;
+  //  height: 160px;
+  //}
 }
 .CardsItemDay_content {
   padding: 11px 0 0 11px;
@@ -140,6 +194,15 @@
   line-height: normal;
 
   margin-bottom: 7px;
+
+  //@media (max-width: 240px) {
+  //  font-size: 15px;
+  //  margin-bottom: 3px;
+  //}
+  @media (max-width: 345px) {
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
 }
 
 .CardsItemDay_day_info {
@@ -150,11 +213,31 @@
   font-weight: 400;
   line-height: normal;
   margin-bottom: 12px;
+
+  //@media (max-width: 240px) {
+  //  font-size: 13px;
+  //  margin-bottom: 7px;
+  //}
+  @media (max-width: 345px) {
+    font-size: 13px;
+    margin-bottom: 7px;
+  }
 }
 .CardsItemDay_img {
   width: 48px;
   height: 48px;
   margin-bottom: 13px;
+
+  //@media (max-width: 240px) {
+  //  width: 38px;
+  //  height: 38px;
+  //  margin-bottom: 7px;
+  //}
+  @media (max-width: 345px) {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 7px;
+  }
 }
 .CardsItemDay_temp_day {
   color: var(--text-color-default);
@@ -162,6 +245,13 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  //@media (max-width: 240px) {
+  //  font-size: 14px;
+  //}
+  @media (max-width: 345px) {
+    font-size: 14px;
+  }
 }
 .CardsItemDay_temp_night {
   color: $base-color;
@@ -170,6 +260,13 @@
   font-weight: 400;
   line-height: normal;
   margin-bottom: 6px;
+
+  //@media (max-width: 240px) {
+  //  font-size: 9px;
+  //}
+  @media (max-width: 345px) {
+    font-size: 9px;
+  }
 }
 .CardsItemDay_info {
   color: $base-color;
@@ -184,4 +281,11 @@
   font-size: 15px;
   font-style: normal;
   line-height: normal;
+
+  //@media (max-width: 240px) {
+  //  font-size: 11px;
+  //}
+  @media (max-width: 345px) {
+    font-size: 11px;
+  }
 }

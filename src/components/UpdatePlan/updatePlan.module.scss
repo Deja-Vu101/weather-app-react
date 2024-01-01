@@ -2,6 +2,7 @@
 
 .UpdatePlan {
   font-size: 17px;
+ 
 }
 
 .UpdatePlan_overlay {
@@ -26,6 +27,11 @@
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  
+  @media (max-width: 240px) {
+    padding: 8px 8px;
+    font-size: 16px;
+  }
 }
 
 .Button {
@@ -39,6 +45,10 @@
   transition: background 0.3s, box-shadow 0.3s;
   border: none;
   cursor: pointer;
+
+  @media (max-width: 240px) {
+    padding: 5px 10px;
+  }
 
   a {
     color: white;

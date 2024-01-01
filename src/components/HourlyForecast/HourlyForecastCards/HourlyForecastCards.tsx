@@ -14,12 +14,13 @@ const HourlyForecastCards: React.FC<HourlyForecastCardsProps> = ({
   timeDay,
 }) => {
   const { list } = useTypedSelector((state) => state.forecast8Days.forecast);
+  const { yearNow, monthNow } = useTypedSelector(
+    (state) => state.currentWeatherSlice.todayState
+  );
   const { data } = usePopup();
-  var monthNow = new Date().getMonth();
-  monthNow++;
 
   const formattedDate = data?.date
-    ? `2023-${monthNow}-${data.date < 10 ? "0" + data.date : data.date}`
+    ? `${yearNow}-${monthNow}-${data.date < 10 ? "0" + data.date : data.date}`
     : null;
 
   return (

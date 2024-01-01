@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useTypedDispatch } from "../../hooks";
+import { useTypedDispatch, useTypedSelector } from "../../hooks";
 import { fetchWeather } from "../../thunks/fetchWeather";
 import s from "./firstSearch.module.scss";
 import button from "../UpdatePlan/updatePlan.module.scss";
 import MainLoader from "../Loaders/MainLoader";
+import { setTodayState } from "../../store/slices/currentWeatherSlice";
+import { log } from "console";
 
 interface FisrtSearchCityProps {
   error: any;
@@ -16,6 +18,9 @@ const FisrtSearchCity: React.FC<FisrtSearchCityProps> = ({
 }) => {
   const dispatch = useTypedDispatch();
   const [searchValue, setSearchValue] = useState("");
+  const { monthNow } = useTypedSelector(
+    (state) => state.currentWeatherSlice.todayState
+  );
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -23,6 +28,21 @@ const FisrtSearchCity: React.FC<FisrtSearchCityProps> = ({
 
   const clickButtonSearch = () => {
     dispatch(fetchWeather(searchValue));
+
+    if (!monthNow) {
+      var MONTH = new Date().getMonth() + 1;
+      var YEAR = new Date().getFullYear();
+      var DAY = new Date().getDay();
+
+      dispatch(
+        setTodayState({
+          monthNow: MONTH.toString(),
+          yearNow: YEAR.toString(),
+          dayNow: DAY.toString(),
+        })
+      );
+      console.log("Worked");
+    }
   };
 
   return (

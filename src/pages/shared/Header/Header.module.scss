@@ -27,6 +27,21 @@
   }
 }
 
+.imgLogoHeader svg {
+  @media (max-width: 400px) {
+    width: 60px;
+    height: 60px;
+  }
+  @media (max-width: 290px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media (max-width: 240px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .logoText {
   font-family: "Poppins";
   color: #4793ff;
@@ -38,21 +53,37 @@
   @media (max-width: 375px) {
     font-size: 20px;
   }
+  @media (max-width: 240px) {
+    font-size: 16px;
+  }
 }
 
 .changeTheme {
   cursor: pointer;
+
+  svg {
+    @media (max-width: 240px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
 .Search_City_Input {
   @media (max-width: 480px) {
     display: none;
   }
+  
 }
 .inputSearchCity {
   width: 140px;
   height: 37px;
   border-radius: 10px;
   padding-left: 10px;
+
+  @media (max-width: 240px) {
+    max-width: 200px;
+    height: 30px;
+  }
 }
 .Header_MobileInput {
   display: flex;

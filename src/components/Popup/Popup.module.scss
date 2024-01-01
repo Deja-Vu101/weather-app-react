@@ -23,7 +23,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  justify-content: center;
   align-items: center;
   max-width: 750px;
   padding: 40px;
@@ -33,12 +32,26 @@
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   z-index: 100;
-  justify-content: space-around;
+  //justify-content: center;
 
   @media (max-width: 580px) {
-    transform: translate(-53%, -30%);
-    margin: 0 15px 0 15px;
+    transform: translate(-50%, -30%);
+    margin: 0;
     width: 75%;
+  }
+  @media (max-width: 400px) {
+    //padding: 20px;
+  }
+  @media (max-width: 370px) {
+    width: 70%;
+    transform: translate(-50%, -20%);
+  }
+  @media (max-width: 300px) {
+    width: 80%;
+  }
+  @media (max-width: 240px) {
+    padding: 0;
+    width: 90%;
   }
 }
 .Popup_About {
@@ -57,6 +70,10 @@
     svg {
       transform: rotate(360deg);
     }
+  }
+  @media (max-width: 240px) {
+    width: 20px;
+    top: 5px;
   }
 }
 

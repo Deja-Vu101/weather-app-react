@@ -7,26 +7,37 @@
   justify-content: center;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  
 }
 
 .HourlyCards_Wrapper {
   display: flex;
   justify-content: center;
 
+
   @media (max-width: 650px) {
     flex-wrap: wrap;
   }
 
-  @media (max-width: 465px) {
-    margin: 0 auto;
-    width: 300px;
+
+  @media (max-width: 320px) {
+    width: inherit;
   }
 }
 .HourlyCards_Image {
   width: 45px;
 
-  @media (max-width: 465px) {
+  @media (max-width: 525px) {
     width: 35px;
+  }
+  @media (max-width: 240px) {
+    width: 30px;
+  }
+}
+
+.HourlyCards_Temperature {
+  @media (max-width: 240px) {
+    font-size: 12px;
   }
 }
 .Hourly_Item {
@@ -55,13 +66,17 @@
     height: 110px;
     margin-bottom: 5px;
   }
-  @media (max-width: 390px) {
+  @media (max-width: 525px) {
     width: 60px;
-    height: 100px;
   }
-
-  @media (max-width: 465px) {
-    width: 60px;
+  @media (max-width: 390px) {
+    width: 50px;
+    height: 90px;
+  }
+  @media (max-width: 240px) {
+    justify-content: space-between;
+    width: 40px;
+    max-height: 70px;
   }
 }
 .HourlyCards_Item:hover {
@@ -70,6 +85,11 @@
 .Item_Time {
   font-size: 18px;
   color: $base-color;
+
+  @media (max-width: 240px) {
+    justify-content: start;
+    font-size: 11px;
+  }
 }
 .HourlyCards_Description {
   padding: 3px;
@@ -82,7 +102,10 @@
   width: 100px;
   box-shadow: var(--card-shadow-default);
 
-  @media (max-width: 465px) {
+  @media (max-width: 525px) {
     width: 70px;
+  }
+  @media (max-width: 240px) {
+    width: 50px;
   }
 }

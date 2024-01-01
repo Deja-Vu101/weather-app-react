@@ -2,6 +2,7 @@
 
 .HourlyForecast {
   width: 100%;
+  justify-content: center;
 }
 .HourlyForecast_Date {
   text-transform: none;
@@ -13,6 +14,14 @@
   text-transform: uppercase;
   color: var(--text-color-default);
   margin: 0;
+
+  @media (max-width: 400px) {
+    padding-top: 10px;
+  }
+  @media (max-width: 240px) {
+    padding-top: 30px;
+    font-size: 17px;
+  }
 }
 
 @import "../../styles/variables.scss";
@@ -103,6 +112,20 @@
   @media (max-width: 660px) {
     margin-left: 15px;
   }
+  @media (max-width: 340px) {
+    font-size: 10px;
+    margin-left: 0;
+  }
+  @media (max-width: 240px) {
+    position: absolute;
+    left: 0;
+    width: 90%;
+    margin: 10px;
+  }
+  
+}
+.infoItems .infoItem{
+  font-size: inherit;
 }
 .infoItem {
   display: flex;

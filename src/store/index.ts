@@ -2,11 +2,12 @@ import { configureStore, combineReducers, getDefaultMiddleware } from "@reduxjs/
 import currentWeatherSlice from "./slices/currentWeatherSlice";
 import forecast8Days from './slices/forecast8DaysSlice';
 
+
 export const apiKey = "50f4aabc3300783a63bac96ec4d92341";
 
 const rootReducer = combineReducers({
 	currentWeatherSlice,
-	forecast8Days
+	forecast8Days,
 })
 
 export const store = configureStore({

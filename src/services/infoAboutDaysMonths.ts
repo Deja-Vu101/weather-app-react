@@ -26,4 +26,3 @@ export const daysOfWeek: { [key: number]: string } = {
 
  export const dateString = todayDate();
 
- export var dayNow = new Date().getDate();
