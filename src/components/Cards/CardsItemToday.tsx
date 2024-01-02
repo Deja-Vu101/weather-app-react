@@ -8,12 +8,14 @@ interface CardsItemTodayProps {
   daysOfWeek: any;
   dateString: string;
   months: { [key: number]: string };
+  isSwiping: boolean;
 }
 
 const CardsItemToday: React.FC<CardsItemTodayProps> = ({
   daysOfWeek,
   dateString,
   months,
+  isSwiping,
 }) => {
   const { weather } = useTypedSelector((state) => state.currentWeatherSlice);
   const { list } = useTypedSelector((state) => state.forecast8Days.forecast);
@@ -45,7 +47,9 @@ const CardsItemToday: React.FC<CardsItemTodayProps> = ({
         (arrTime.includes("15") ? " 15:00:00" : ` ${arrTime[0]}:00:00`),
     };
 
-    openPopup(popupData);
+    if (!isSwiping) {
+      openPopup(popupData);
+    }
   };
 
   return (

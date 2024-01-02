@@ -128,8 +128,10 @@
     display: none;
   }
 }
-.CardsWeek_wrapper_container {
+.CardsWeek_wrapper {
   position: relative;
+}
+.CardsWeek_wrapper_container {
   display: flex;
   justify-content: space-around;
   padding: 20px;
@@ -148,11 +150,6 @@
   background: var(--components-background-default);
 
   box-shadow: var(--card-shadow-default);
-
-  //@media (max-width: 240px) {
-  //  width: 230px;
-  //}
-  
 }
 .CardsItemDay {
   width: 149px;
@@ -177,10 +174,6 @@
     width: 95px;
     height: 160px;
   }
-  //@media (max-width: 240px) {
-  //  width: 95px;
-  //  height: 160px;
-  //}
 }
 .CardsItemDay_content {
   padding: 11px 0 0 11px;
@@ -195,10 +188,6 @@
 
   margin-bottom: 7px;
 
-  //@media (max-width: 240px) {
-  //  font-size: 15px;
-  //  margin-bottom: 3px;
-  //}
   @media (max-width: 345px) {
     font-size: 15px;
     margin-bottom: 3px;
@@ -214,10 +203,6 @@
   line-height: normal;
   margin-bottom: 12px;
 
-  //@media (max-width: 240px) {
-  //  font-size: 13px;
-  //  margin-bottom: 7px;
-  //}
   @media (max-width: 345px) {
     font-size: 13px;
     margin-bottom: 7px;
@@ -228,11 +213,6 @@
   height: 48px;
   margin-bottom: 13px;
 
-  //@media (max-width: 240px) {
-  //  width: 38px;
-  //  height: 38px;
-  //  margin-bottom: 7px;
-  //}
   @media (max-width: 345px) {
     width: 38px;
     height: 38px;
@@ -246,9 +226,6 @@
   font-weight: 500;
   line-height: normal;
 
-  //@media (max-width: 240px) {
-  //  font-size: 14px;
-  //}
   @media (max-width: 345px) {
     font-size: 14px;
   }
@@ -261,9 +238,6 @@
   line-height: normal;
   margin-bottom: 6px;
 
-  //@media (max-width: 240px) {
-  //  font-size: 9px;
-  //}
   @media (max-width: 345px) {
     font-size: 9px;
   }
@@ -282,9 +256,6 @@
   font-style: normal;
   line-height: normal;
 
-  //@media (max-width: 240px) {
-  //  font-size: 11px;
-  //}
   @media (max-width: 345px) {
     font-size: 11px;
   }
